@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppHeaderComponent implements OnInit {
   constructor() {}
+  public imgSrc: string = '';
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.imgSrc = 'assets/images/ng-learning.png';
+  }
 }
