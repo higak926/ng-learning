@@ -1,0 +1,18 @@
+.sect {
+  margin-bottom: 2rem;
+}
+
+
+.sec-link {
+  background:
+      linear-gradient(currentColor 0 0)
+      bottom /var(--d, 0) 3px
+      no-repeat;
+  transition:0.5s;
+  color: #00CCFF;
+  text-decoration:none;
+}
+.sec-link:hover,
+.sec-link:active {
+  --d: 100%;
+}

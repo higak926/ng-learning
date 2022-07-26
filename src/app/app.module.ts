@@ -8,21 +8,17 @@ import { AppFooterComponent } from './app-footer/app-footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TopComponent } from './top/top.component';
 import { ErrorComponent } from './error/error.component';
+import { BuiltEnvironmentComponent } from './learn/built-environment/built-environment.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AppHeaderComponent,
     AppFooterComponent,
-    TopComponent,
-    ErrorComponent
+    ErrorComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, NgbModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

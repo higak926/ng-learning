@@ -1,0 +1,43 @@
+<div class="container" id="page">
+  <div class="row">
+    <h2>(噂の)環境構築 <span class="h5">〜簡単3ステップ〜</span></h2>
+    <hr />
+    <h5>Step 1. まずはnode.js！</h5>
+    <p>Angularの環境を構築するために、ますはnodeをインストールしましょう。<br />
+      無事インストールできると、下記コマンドでバージョンを確認することができます</p>
+    <a href="https://nodejs.org/ja/" target="_blank">node.js 公式サイト</a>
+    <code class="mt-2">node --version <br />
+      v16.15.1 <br />
+      # バージョン出なかった人はインストール失敗しているかも！<br /># 頑張ってインストールしましょう</code>
+
+    <span class="small mt-3">注1.) Angularは多くの機能や関数を<span
+        class="text-danger">npmパッケージ</span>に依存しているため、node.jsをインストールしてnpmパッケージを利用できるようにします</span>
+    <span class="small mt-1">注2.) node.jsのバージョンはお好みですが、あまり新しすぎるとかえって動かない(ググったときの情報が少ない)可能性があるため、LTSをお勧めします！</span>
+
+    <div class="space"></div>
+
+    <h5>Step 2. お次にAngular CLI！</h5>
+    <p>Angularプロジェクトの作成やコンポーネントの生成、テスト、デプロイなど様々な開発タスクのお役に立つAngular CLIをインストールしましょう。</p>
+    <span class="small">注1.) Step 1でnode.jsをインストールしているため、npmコマンドが使えるようになっていると思います</span>
+    <code class="mt-2">npm install -g @angular/cli@13.3.9<br /># -gでグローバルインストール、@~でバージョン指定できるよ！</code>
+    <span class="small mt-2">注2.) 無事インストールできたら、下記コマンドでバージョン確認してみましょう</span>
+    <code class="mt-2">ng v <br />イカしたAngularロゴとcliやdevkitなどのバージョン情報が表示されたら、無事インストール完了！</code>
+
+    <div class="space"></div>
+
+    <h5>Step 3. Angularプロジェクトの作成</h5>
+    <p>Step 2でインストールしたAngular CLIを使って、プロジェクトを作成しましょう！</p>
+    <span class="small">注1.) ng newコマンドでプロジェクト名を指定して作成することができます</span>
+    <code class="mt-2">ng new my-app<br /># my-appという名前でプロジェクト作成</code>
+    <span class="small mt-2">注2.) プロジェクトが作成できたら、ローカルサーバーを起動して動作確認してみましょう</span>
+    <code class="mt-2">cd my-app<br />
+      ng serve --open<br />
+      # http://localhost:4200/にアクセスしてサーバーが立ち上がっていれば、無事動作確認は完了！<br />
+      # control + Cでサーバを止めることができるよ</code>
+
+    <p class="mt-3">ここまで確認できれば、一先ずAngular開発できる準備は完了です<br />お疲れ様でした🎉🎉🎉</p>
+    <p class="mt-2">ちなみに！</p>
+    <p>ここまでの内容はAngular公式サイトに記載されています。気になる方は是非覗いてみてください👀</p>
+    <a href="https://angular.jp/guide/setup-local" target="_blank">Angular 公式サイト セットアップ</a>
+  </div>
+</div>
