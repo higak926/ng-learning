@@ -1,6 +1,15 @@
 <div class="wrapper">
   <app-header></app-header>
-  <router-outlet></router-outlet>
+  <div *ngIf="!isLoading; else loading">
+    <router-outlet></router-outlet>
+  </div>
+
+
+  <ng-template #loading>
+    <div class="d-flex justify-content-center">
+      <progress-spinner></progress-spinner>
+    </div>
+  </ng-template>
 
   <app-footer></app-footer>
 </div>

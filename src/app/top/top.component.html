@@ -1,6 +1,6 @@
-<div *ngIf="display; else loading">
+<div *ngIf="true">
   <div class="container">
-    <h1 style="text-align: center;">Angular 学ぶよ！</h1>
+    <div class="h1" style="text-align: center;">Angular 学ぶよ！</div>
     <div class="row">
       <div class="col-md-3" style="text-align: center;">
         <img [src]="angLogoImgSrc" alt="angular_logo">
@@ -21,7 +21,7 @@
     </div>
     <br />
     <div class="row sect">
-      <h2>Angularを学ぶ！</h2>
+      <div class="h2">Angularを学ぶ！</div>
       <hr />
       <div class="col-md-2"><a (click)="toLearnBuiltEnv()" href="javascript:void(0)" class="sec-link">(噂の)環境構築</a></div>
       <div class="col-md-1"><a href="#" target="_blank">環境構築</a></div>
@@ -30,21 +30,14 @@
     </div>
     <br />
     <div class="row">
-      <h2>Angularで遊ぶ！？</h2>
+      <div class="h2">Angularで遊ぶ！？</div>
     </div>
     <br />
     <div class="row">
-      <h2>(Angularを学ぶ前に)おさらいするよ！</h2>
+      <div class="h2">(Angularを学ぶ前に)おさらいするよ！</div>
       <p>おさらいは積極的に！(基礎は最強)</p>
       <a href="#" target="_blank">フロント基礎</a>
       <a href="#" target="_blank">開発(またはものづくり)の基礎</a>
     </div>
   </div>
 </div>
-
-<ng-template #loading>
-  <div class="d-flex justify-content-center">
-    <progress-spinner></progress-spinner>
-  </div>
-
-</ng-template>
