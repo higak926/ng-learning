@@ -6,9 +6,9 @@ import { AppComponent } from './app.component';
 import { AppHeaderComponent } from './app-header/app-header.component';
 import { AppFooterComponent } from './app-footer/app-footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { TopComponent } from './top/top.component';
 import { ErrorComponent } from './error/error.component';
-import { BuiltEnvironmentComponent } from './learn/built-environment/built-environment.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,13 @@ import { BuiltEnvironmentComponent } from './learn/built-environment/built-envir
     AppFooterComponent,
     ErrorComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, NgbModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgbModule,
+    BrowserAnimationsModule,
+    SharedModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

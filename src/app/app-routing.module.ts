@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TopComponent } from 'src/app/top/top.component';
 import { ErrorComponent } from 'src/app/error/error.component';
-import { BuiltEnvironmentComponent } from 'src/app/learn/built-environment/built-environment.component';
 
 const routes: Routes = [
   {
