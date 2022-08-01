@@ -8,14 +8,7 @@ import { LoadingService } from 'src/app/services/loading.service';
   styleUrls: ['./built-environment.component.scss'],
 })
 export class BuiltEnvironmentComponent implements OnInit {
-  readonly topPath: string = '/top';
-
   constructor(public router: Router, public loadingService: LoadingService) {}
 
   ngOnInit(): void {}
-
-  toTop(): void {
-    this.loadingService.isLoadingSbj.next();
-    this.router.navigate([this.topPath]);
-  }
 }
