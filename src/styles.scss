@@ -48,7 +48,8 @@ table {
 }
 
 .mat-progress-spinner circle, .mat-spinner circle {
-	stroke: rgba(250, 5, 233, 0.988)!important;
+	stroke: orange;
+	// stroke: rgba(250, 5, 233, 0.988)!important;
 	stroke-width: 3%!important;
 	r: 25!important;
 }
