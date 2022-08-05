@@ -1,1 +1,123 @@
-<h2>チュートリアルの前に・・・イメージしよう</h2>
+<div class="container">
+  <div class="row">
+    <h1>チュートリアルの前に・・・<br />イメージを掴んでおこう</h1>
+    <hr>
+  </div>
+  <h2>Angularについて</h2>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="row mb-3">
+        <p>Angularは<span><strong>TypeScriptベースの開発プラットフォーム</strong></span>です。
+        </p>
+        <p>
+          特にチーム開発する上で便利な機能がたくさん盛り込まれています。
+          (もちろん個人開発でもお役に立ちます)
+          上記の通り、Angularは巨大なプラットフォームなので覚えることもたくさんありますが<br />
+          まずは基本事項を確認してチュートリアルで理解を深めていくことにしましょう。</p>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="lead">Angularの特徴</div>
+      <ul class="mt-2 ex-list">
+        <li>・スケールしやすいコンポーネントベースのフレームワーク</li>
+        <li>・ルーティングやフォーム管理、APIと疎通などを補助してくれるライブラリ込み</li>
+        <li>・コーディング、ビルド、テスト、デプロイなどを支援してくれるツール込み</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <div class="sec">
+        <div class="title">コンポーネント</div>
+        <p>
+          コンポーネントは大雑把にいうと<span><strong>画面を構成する部品</strong></span>です。<br />
+          Angularのコンポーネントは.component.ts拡張子のファイルを指します。<br />
+          思想としては、カプセル化による疎結合(再利用性、役割の明確化)で直感的なアプリ構造、またテストを容易にし開発をスムーズに進められる配慮を感じるかと思います。
+        </p>
+        <ul class="ex-list">
+          <li>・使用するテンプレートやcssの定義</li>
+          <li>・DOMツリーを構成するためのデータセット定義</li>
+          <li>・API通信によるデータ取得や整形、描画ロジック</li>
+        </ul>
+        <p class="example">例) hello-world-bindings.component.ts</p>
+        <div class="mb-3">
+          <code>
+            <pre>{{codeComponentEx}}</pre>
+          </code>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 mb-3">
+      <div class="sec">
+        <div class="title">テンプレート</div>
+        <p>
+          基本的にAngularは<strong>HTMLテンプレート</strong>を採用しています。<br />
+          そのため、基本的なHTMLタグを使用することができます。(地味に嬉しい)<br />
+          また、動的にDOMを更新するための各種バインド(データやイベントなど)や強力なディレクティブなどAngularが独自で用意してくれている機能もあるので、チュートリアルで使ってみて感触を確かめてみてください。
+        </p>
+        <ul class="ex-list">
+          <li>・HTMLの各種タグの使用</li>
+          <li>・各種バインド(データ、イベント..etc)</li>
+          <li>・ディレクティブやパイプなどAngularが用意してくれる機能</li>
+        </ul>
+        <p class="example">例) hello-world-bindings.component.html</p>
+        <div class="mb-3">
+          <code>
+            <pre>{{codeTemplateEx}}</pre>
+          </code>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 mb-3">
+      <div class="sec">
+        <div class="title">依存性の注入</div>
+        <p>
+          Angularではよくコンポーネント間でデータを共有したりやりとりしたいときにサービスを作ることがあります。(.service.ts拡張子のファイルです）<br />
+          基本的にTypeScriptベースのためclassとして定義されますが、依存性の注入（DI）を使用することでAngularがインスタンス化を処理してくれるため、結果的に柔軟な開発やテストの実現に大きく役立ちます。<br />
+          特にAPIを叩いてデータを取得・保持する場合などは、役割をはっきりさせるためサービス定義することが多々あるため、DIもしっかり使いこなしていけるようにしていきましょう。
+        </p>
+        <code>
+          <pre>{{codeDiEx}}</pre>
+        </code>
+      </div>
+    </div>
+
+    <div class="col-md-6 mb-3">
+      <div class="sec">
+        <div class="title">Angular CLI</div>
+        <p>
+          環境構築でも触れましたが、チュートリアルの中でもAngular CLIを利用してスムーズに進めていきましょう！特にng serve、ng generateあたりは必須で使っていきます。
+          その他にも様々なCLIコマンドがありますので、ご自身で便利だと感じたものは積極的に利用していくことをお勧めします。
+        </p>
+        <code>
+          <pre>{{codeCliEx}}</pre>
+        </code>
+      </div>
+    </div>
+
+    <div class="col-md-6 mb-3">
+      <div class="sec">
+        <div class="title">ファーストパーティライブラリ</div>
+        <p>
+          Angularは巨大なプラットフォームのため、充実したライブラリが数多く用意されています。
+          特にAngular RouterやAngular Forms、Angular HttpClientあたりは使用タイミングも多いかと思いますので、チュートリアルの中でも外でもどんどん利用して爆速開発の武器としてください。
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <p>
+      ここまで少し長かったですが、以上がチュートリアル前のAngularのご紹介になります。お疲れ様でした🎉🎉🎉
+      <br />
+      最後にチュートリアルの簡単なイメージ図を載せておきます。
+      それでは、いざ、チュートリアルへ！
+    </p>
+  </div>
+  <div style="text-align: center;">
+    <img [src]="tutorialImgSrc" alt="tutorial_img" width="100%" height="100%">
+  </div>
+</div>
