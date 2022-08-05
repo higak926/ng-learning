@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { BuiltEnvironmentComponent } from './built-environment/built-environment.component';
 import { TutorialComponent } from './tutorials/tutorial/tutorial.component';
 import { BeforeTutorialComponent } from './before-tutorial/before-tutorial.component';
+import { InitProjectComponent } from './tutorials/tutorial/init-project/init-project.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
     path: 'tutorial',
     component: TutorialComponent,
   },
+  {
+    path: 'tutorial/init-project',
+    component: InitProjectComponent,
+  },
 ];
 
 @NgModule({
@@ -25,6 +30,7 @@ const routes: Routes = [
     BuiltEnvironmentComponent,
     TutorialComponent,
     BeforeTutorialComponent,
+    InitProjectComponent,
   ],
   imports: [RouterModule.forChild(routes)],
   providers: [],
