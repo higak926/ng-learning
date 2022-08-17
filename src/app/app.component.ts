@@ -8,6 +8,7 @@ import {
   query,
   sequence,
 } from '@angular/animations';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -46,18 +47,27 @@ import {
   ],
 })
 export class AppComponent implements OnInit {
-  constructor(public loadingService: LoadingService) {}
+  constructor(public loadingService: LoadingService, public router: Router) {}
   public isLoading: boolean = false;
   public topUrl: boolean = false;
+  public isTutorial: boolean = false;
 
   ngOnInit(): void {
+    // Topページ判定用
     this.topUrl = location.href.includes('/top');
+    // ローディングは最初に購読しておく
     this.loadingService.isLoadingSbj.subscribe(() => {
       this.isLoading = true;
       setTimeout(() => {
         this.isLoading = false;
         this.topUrl = location.href.includes('/top');
       }, 1000);
+    });
+    // チュートリアル判定も最初に購読しておく
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.isTutorial = location.href.includes('/tutorial/');
+      }
     });
   }
 }

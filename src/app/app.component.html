@@ -3,7 +3,10 @@
 
   <div *ngIf="!isLoading; else loading">
     <router-outlet></router-outlet>
-    <transition-to-top *ngIf="!topUrl"></transition-to-top>
+    <div class="transitions">
+      <transition-to-tutorial-top *ngIf="isTutorial"></transition-to-tutorial-top>
+      <transition-to-top *ngIf="!topUrl"></transition-to-top>
+    </div>
   </div>
 
 
