@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { LoadingService } from 'src/app/services/loading.service';
 import {
   trigger,
@@ -69,5 +69,10 @@ export class AppComponent implements OnInit {
         this.isTutorial = location.href.includes('/tutorial/');
       }
     });
+  }
+
+  @HostListener('window:popstate')
+  onPopState() {
+    this.loadingService.isLoadingSbj.next();
   }
 }
