@@ -8,19 +8,13 @@
   }
 }
 
-.row-condition {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .sec {
   padding: 0.5em 1em;
   border-top: solid 6px #1dc1d6;
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
-  height: 100%;
 }
 
-.sec .title {
+.content {
   font-size: large;
   font-weight: bold;
   color: #00BCD4;
