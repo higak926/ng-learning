@@ -26,95 +26,114 @@
     </div>
   </div>
 
-  <nz-collapse>
-    <div class="row">
-      <div class="col-md-6 mb-3">
-        <nz-collapse-panel class="sec" style="font-weight: bold; color: navy;" [nzHeader]="'コンポーネント'"
-          [nzActive]="false">
-          <div class="content">
-            <p>
-              コンポーネントは大雑把にいうと<span><strong>画面を構成する部品</strong></span>です。<br />
-              Angularのコンポーネントは.component.ts拡張子のファイルを指します。<br />
-              思想としては、カプセル化による疎結合(再利用性、役割の明確化)で直感的なアプリ構造、またテストを容易にし開発をスムーズに進められる配慮を感じるかと思います。
-            </p>
-            <ul class="ex-list">
-              <li>・使用するテンプレートやcssの定義</li>
-              <li>・DOMツリーを構成するためのデータセット定義</li>
-              <li>・API通信によるデータ取得や整形、描画ロジック</li>
-            </ul>
-            <p class="example">例) hello-world-bindings.component.ts</p>
-            <div class="mb-3">
-              <code>
-                <pre>{{codeComponentEx}}</pre>
-              </code>
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <div class="sec">
+        <nz-collapse>
+          <nz-collapse-panel style="font-weight: bold; color: navy;" [nzHeader]="titles.component" [nzActive]="false">
+            <div class="content">
+              <p>
+                コンポーネントは大雑把にいうと<span><strong>画面を構成する部品</strong></span>です。<br />
+                Angularのコンポーネントは.component.ts拡張子のファイルを指します。<br />
+                思想としては、カプセル化による疎結合(再利用性、役割の明確化)で直感的なアプリ構造、またテストを容易にし開発をスムーズに進められる配慮を感じるかと思います。
+              </p>
+              <ul class="ex-list">
+                <li>・使用するテンプレートやcssの定義</li>
+                <li>・DOMツリーを構成するためのデータセット定義</li>
+                <li>・API通信によるデータ取得や整形、描画ロジック</li>
+              </ul>
+              <p class="example">例) hello-world-bindings.component.ts</p>
+              <div class="mb-3">
+                <code>
+                  <pre>{{codeComponentEx}}</pre>
+                </code>
+              </div>
             </div>
-          </div>
-        </nz-collapse-panel>
-      </div>
-      <div class="col-md-6 mb-3">
-        <nz-collapse-panel class="sec" style="font-weight: bold; color: navy;" [nzHeader]="'テンプレート'" [nzActive]="false">
-          <div class="content">
-            <p>
-              基本的にAngularは<strong>HTMLテンプレート</strong>を採用しています。<br />
-              そのため、基本的なHTMLタグを使用することができます。(地味に嬉しい)<br />
-              また、動的にDOMを更新するための各種バインド(データやイベントなど)や強力なディレクティブなどAngularが独自で用意してくれている機能もあるので、チュートリアルで使ってみて感触を確かめてみてください。
-            </p>
-            <ul class="ex-list">
-              <li>・HTMLの各種タグの使用</li>
-              <li>・各種バインド(データ、イベント..etc)</li>
-              <li>・ディレクティブやパイプなどAngular独自の機能</li>
-            </ul>
-            <p class="example">例) hello-world-bindings.component.html</p>
-            <div class="mb-3">
-              <code>
-                <pre>{{codeTemplateEx}}</pre>
-              </code>
-            </div>
-          </div>
-        </nz-collapse-panel>
-      </div>
-      <div class="col-md-6 mb-3">
-        <nz-collapse-panel class="sec" style="font-weight: bold; color: navy;" [nzHeader]="'依存性の注入'" [nzActive]="false">
-          <div class="content">
-            <p>
-              Angularではよくコンポーネント間でデータを共有したりやりとりしたいときにサービスを作ることがあります。(.service.ts拡張子のファイルです）<br />
-              基本的にTypeScriptベースのためclassとして定義されますが、依存性の注入（DI）を使用することでAngularがインスタンス化を処理してくれるため、結果的に柔軟な開発やテストの実現に大きく役立ちます。<br />
-              特にAPIを叩いてデータを取得・保持する場合などは、役割をはっきりさせるためサービス定義することが多々あるため、DIもしっかり使いこなしていけるようにしていきましょう。
-            </p>
-            <code>
-              <pre>{{codeDiEx}}</pre>
-            </code>
-          </div>
-        </nz-collapse-panel>
-      </div>
-      <div class="col-md-6 mb-3">
-        <nz-collapse-panel class="sec" style="font-weight: bold; color: navy;" [nzHeader]="'Angular CLI'"
-          [nzActive]="false">
-          <div class="content">
-            <p>
-              環境構築でも触れましたが、チュートリアルの中でもAngular CLIを利用してスムーズに進めていきましょう！特にng serve、ng generateあたりは必須で使っていきます。
-              その他にも様々なCLIコマンドがありますので、ご自身で便利だと感じたものは積極的に利用していくことをお勧めします。
-            </p>
-            <code>
-              <pre>{{codeCliEx}}</pre>
-            </code>
-          </div>
-        </nz-collapse-panel>
-      </div>
-      <div class="col-md-6 mb-3">
-        <nz-collapse-panel class="sec" style="font-weight: bold; color: navy;" [nzHeader]="'ファーストパーティライブラリ'"
-          [nzActive]="false">
-          <div class="content">
-            <p>
-              Angularは巨大なプラットフォームのため、充実したライブラリが数多く用意されています。
-              特にAngular RouterやAngular Forms、Angular
-              HttpClientあたりは使用タイミングも多いかと思いますので、チュートリアルの中でも外でもどんどん利用して爆速開発の武器としてください。
-            </p>
-          </div>
-        </nz-collapse-panel>
+          </nz-collapse-panel>
+        </nz-collapse>
       </div>
     </div>
-  </nz-collapse>
+
+    <div class="col-md-6 mb-3">
+      <div class="sec">
+        <nz-collapse>
+          <nz-collapse-panel style="font-weight: bold; color: navy;" [nzHeader]="titles.template" [nzActive]="false">
+            <div class="content">
+              <p>
+                基本的にAngularは<strong>HTMLテンプレート</strong>を採用しています。<br />
+                そのため、基本的なHTMLタグを使用することができます。(地味に嬉しい)<br />
+                また、動的にDOMを更新するための各種バインド(データやイベントなど)や強力なディレクティブなどAngularが独自で用意してくれている機能もあるので、チュートリアルで使ってみて感触を確かめてみてください。
+              </p>
+              <ul class="ex-list">
+                <li>・HTMLの各種タグの使用</li>
+                <li>・各種バインド(データ、イベント..etc)</li>
+                <li>・ディレクティブやパイプなどAngular独自の機能</li>
+              </ul>
+              <p class="example">例) hello-world-bindings.component.html</p>
+              <div class="mb-3">
+                <code>
+                  <pre>{{codeTemplateEx}}</pre>
+                </code>
+              </div>
+            </div>
+          </nz-collapse-panel>
+        </nz-collapse>
+      </div>
+    </div>
+
+    <div class="col-md-6 mb-3">
+      <div class="sec">
+        <nz-collapse>
+          <nz-collapse-panel style="font-weight: bold; color: navy;" [nzHeader]="titles.di" [nzActive]="false">
+            <div class="content">
+              <p>
+                Angularではよくコンポーネント間でデータを共有したりやりとりしたいときにサービスを作ることがあります。(.service.ts拡張子のファイルです）<br />
+                基本的にTypeScriptベースのためclassとして定義されますが、依存性の注入（DI）を使用することでAngularがインスタンス化を処理してくれるため、結果的に柔軟な開発やテストの実現に大きく役立ちます。<br />
+                特にAPIを叩いてデータを取得・保持する場合などは、役割をはっきりさせるためサービス定義することが多々あるため、DIもしっかり使いこなしていけるようにしていきましょう。
+              </p>
+              <code>
+                <pre>{{codeDiEx}}</pre>
+              </code>
+            </div>
+          </nz-collapse-panel>
+        </nz-collapse>
+      </div>
+    </div>
+
+    <div class="col-md-6 mb-3">
+      <div class="sec">
+        <nz-collapse>
+          <nz-collapse-panel style="font-weight: bold; color: navy;" [nzHeader]="titles.cli" [nzActive]="false">
+            <div class="content">
+              <p>
+                環境構築でも触れましたが、チュートリアルの中でもAngular CLIを利用してスムーズに進めていきましょう！特にng serve、ng generateあたりは必須で使っていきます。
+                その他にも様々なCLIコマンドがありますので、ご自身で便利だと感じたものは積極的に利用していくことをお勧めします。
+              </p>
+              <code>
+                <pre>{{codeCliEx}}</pre>
+              </code>
+            </div>
+          </nz-collapse-panel>
+        </nz-collapse>
+      </div>
+    </div>
+
+    <div class="col-md-6 mb-3">
+      <div class="sec">
+        <nz-collapse>
+          <nz-collapse-panel style="font-weight: bold; color: navy;" [nzHeader]="titles.fl" [nzActive]="false">
+            <div class="content">
+              <p>
+                Angularは巨大なプラットフォームのため、充実したライブラリが数多く用意されています。
+                特にAngular RouterやAngular Forms、Angular
+                HttpClientあたりは使用タイミングも多いかと思いますので、チュートリアルの中でも外でもどんどん利用して爆速開発の武器としてください。
+              </p>
+            </div>
+          </nz-collapse-panel>
+        </nz-collapse>
+      </div>
+    </div>
+  </div>
 
   <div class="row">
     <p>

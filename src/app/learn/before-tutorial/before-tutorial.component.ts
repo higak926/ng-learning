@@ -60,6 +60,14 @@ export class BeforeTutorialComponent implements OnInit {
    (importも自動で調整してくれたりします)
   `;
 
+  public titles = {
+    component: 'コンポーネント',
+    template: 'テンプレート',
+    di: '依存性の注入',
+    cli: 'Angular CLI',
+    fl: 'ファーストパーティライブラリ',
+  };
+
   constructor() {}
 
   ngOnInit(): void {}
