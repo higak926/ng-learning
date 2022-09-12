@@ -25,7 +25,7 @@ export class TopComponent implements OnInit {
   }
 
   /**
-   * 環境構築へ遷移
+   * チュートリアルの前に
    */
   toLearnBeforeTutorial(): void {
     this.loadingService.isLoadingSbj.next();
@@ -33,7 +33,7 @@ export class TopComponent implements OnInit {
   }
 
   /**
-   * 環境構築へ遷移
+   * チュートリアルへ
    */
   toLearnTutorial(): void {
     this.loadingService.isLoadingSbj.next();

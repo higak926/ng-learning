@@ -10,6 +10,7 @@ import { LoadingService } from 'src/app/services/loading.service';
 export class TutorialComponent implements OnInit {
   tutorialImgSrc: string = 'assets/images/tutorial_image.png';
   toInitProjectPath: string = 'learn/tutorial/init-project';
+  learnBeforeTutorial: string = 'learn/before-tutorial';
 
   constructor(public router: Router, public loadingService: LoadingService) {}
 
@@ -18,5 +19,13 @@ export class TutorialComponent implements OnInit {
   public toInitProject(): void {
     this.loadingService.isLoadingSbj.next();
     this.router.navigate([this.toInitProjectPath]);
+  }
+
+  /**
+   * 戻る チュートリアルの前に
+   */
+  public toBack(): void {
+    this.loadingService.isLoadingSbj.next();
+    this.router.navigate([this.learnBeforeTutorial]);
   }
 }

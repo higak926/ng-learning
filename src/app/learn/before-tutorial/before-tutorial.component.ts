@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoadingService } from 'src/app/services/loading.service';
 
 @Component({
   selector: 'app-before-tutorial',
@@ -60,6 +62,16 @@ export class BeforeTutorialComponent implements OnInit {
    (importも自動で調整してくれたりします)
   `;
 
+  public clickedStyle = {
+    'font-weight': 'bold',
+    color: 'red',
+  };
+
+  public nonClickedStyle = {
+    'font-weight': 'bold',
+    color: 'navy',
+  };
+
   public titles = {
     component: 'コンポーネント',
     template: 'テンプレート',
@@ -68,7 +80,65 @@ export class BeforeTutorialComponent implements OnInit {
     fl: 'ファーストパーティライブラリ',
   };
 
-  constructor() {}
+  public items = [
+    {
+      key: 'component',
+      title: 'コンポーネント',
+      isClick: false,
+    },
+    {
+      key: 'template',
+      title: 'テンプレート',
+      isClick: false,
+    },
+    {
+      key: 'di',
+      title: '依存性の注入',
+      isClick: false,
+    },
+    {
+      key: 'cli',
+      title: 'Angular CLI',
+      isClick: false,
+    },
+    {
+      key: 'fl',
+      title: 'ファーストパーティライブラリ',
+      isClick: false,
+    },
+  ];
+
+  learnBuiltEnvPath: string = 'learn/built-env';
+  learnTutorial: string = 'learn/tutorial';
+
+  constructor(public router: Router, public loadingService: LoadingService) {}
 
   ngOnInit(): void {}
+
+  /**
+   * パネルクリック
+   */
+  onClickPanel(type: string): void {
+    this.items.map((item) => {
+      if (item.key === type) {
+        item.isClick = !item.isClick;
+      }
+    });
+  }
+
+  /**
+   * 戻る 環境構築
+   */
+  toBack(): void {
+    this.loadingService.isLoadingSbj.next();
+    this.router.navigate([this.learnBuiltEnvPath]);
+  }
+
+  /**
+   * 次へ チュートリアル
+   */
+  toNext(): void {
+    this.loadingService.isLoadingSbj.next();
+    this.router.navigate([this.learnTutorial]);
+  }
 }

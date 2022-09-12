@@ -9,6 +9,15 @@ import { LoadingService } from 'src/app/services/loading.service';
 })
 export class BuiltEnvironmentComponent implements OnInit {
   constructor(public router: Router, public loadingService: LoadingService) {}
+  learnBeforeTutorial: string = 'learn/before-tutorial';
 
   ngOnInit(): void {}
+
+  /**
+   * 次へ チュートリアルの前に
+   */
+  toNext(): void {
+    this.loadingService.isLoadingSbj.next();
+    this.router.navigate([this.learnBeforeTutorial]);
+  }
 }
